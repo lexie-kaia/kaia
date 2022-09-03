@@ -17,6 +17,7 @@ const Document = () => {
         />
       </Head>
       <body>
+        {/* <body className="dark"> */}
         <Main />
         <NextScript />
       </body>

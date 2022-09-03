@@ -1,6 +1,6 @@
-import { Global, css } from '@emotion/react'
+import { css } from '@emotion/react'
 
-const globalStyles = css`
+export const globalStyles = css`
   /* reset */
 
   * {
@@ -67,10 +67,33 @@ const globalStyles = css`
   }
 
   /* global */
+  body {
+    --bg-main: #ffffff;
+    --bg-sub: #f8fafb;
+    --line: #e1e4e6;
+    --text-primary: #363a3c;
+    --text-secondary: #878d91;
+    --highlight: #4c80f1;
+    --shadow-light: rgba(54, 58, 60, 0.05);
+    --shadow-dark: rgba(54, 58, 60, 0.1);
+  }
+
+  body.dark {
+    --bg-main: #202124;
+    --bg-sub: #303134;
+    --line: #3c4043;
+    --text-primary: #ced0d5;
+    --text-secondary: #969ba1;
+    --highlight: #8ab4f8;
+    --shadow-light: rgba(255, 255, 255, 0.05);
+    --shadow-dark: rgba(255, 255, 255, 0.1);
+  }
 
   html,
   body {
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
     font-size: 16px;
     line-height: 1.5;
   }
@@ -78,28 +101,4 @@ const globalStyles = css`
   html {
     scroll-snap-type: y mandatory;
   }
-
-  body {
-    --back-main: #ffffff;
-    --back-sub: #f8fafb;
-    --line: #e1e4e6;
-    --text-primary: #363a3c;
-    --text-secondary: #878d91;
-    --highlight: #4c80f1;
-  }
-
-  body.dark {
-    --back-main: #202124;
-    --back-sub: #303134;
-    --line: #3c4043;
-    --text-primary: #ced0d5;
-    --text-secondary: #969ba1;
-    --highlight: #8ab4f8;
-  }
 `
-
-const GlobalStyle = () => {
-  return <Global styles={globalStyles} />
-}
-
-export default GlobalStyle

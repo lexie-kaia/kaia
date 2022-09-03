@@ -1,13 +1,14 @@
-import GlobalStyle from 'styles/globals.style'
+import GlobalStyleProvider from 'styles/GlobalStyleProvider'
 import { Layout } from 'components/layout'
 
 const App = ({ Component, pageProps }) => {
   return (
     <>
-      <GlobalStyle />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <GlobalStyleProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </GlobalStyleProvider>
     </>
   )
 }
